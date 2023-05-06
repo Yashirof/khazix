@@ -4,15 +4,12 @@ from bs4 import BeautifulSoup
 class Khazix:
     def __init__(self, nickname):
         self._nickname = nickname
-        self._headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0"
-        }
+        self._headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0"}
+        self._instance = requests.get(f"https://lols.gg/pt/name/checker/br/{self._nickname}/", headers=self._headers)
 
     async def search(self):
         try:
-            response = requests.get(f"https://lols.gg/pt/name/checker/br/{self._nickname}/", headers=self._headers)
-        
-            soup = BeautifulSoup(response.text, 'html.parser')
+            soup = BeautifulSoup(self._instance.text, 'html.parser')
             tags = soup.find_all('h4', {'class': 'text-center'})
         
             if len(tags) == 0:
