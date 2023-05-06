@@ -30,4 +30,4 @@ async def on_message(message):
         embed.set_image(url="https://imgs.search.brave.com/sltuyQG6tiNqMb2vCOavsYEfMWbY5q4rIAlfg3Kefzc/rs:fit:1200:600:1/g:ce/aHR0cHM6Ly9lc3Bv/cnRzLmFzLmNvbS8y/MDE4LzA5LzEzL3Nr/aW5zL2toYXppeC1j/aGFtcGlvbnNoaXAt/NzcweDQ1NDFfMTE3/MjI5Mjc2NV8xMDM1/OTNfMTQ0MHg2MDAu/anBn") # Substitua pela URL da sua imagem grande
         await message.reply(embed=embed)
 
-client.run("MTAzODEwNjE3MzMzOTA5NTE0MQ.Ga9Nco.7q-FRsblEYAW7mpT9x40_hVCHXtxEAxBYEGS3g")
+client.run("")
