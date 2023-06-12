@@ -18,7 +18,7 @@ async def on_message(message):
 
     if message.content.startswith('!check'):
 
-        if len(message.content[7:]) <= 2 or len(message.content[7:]) >= 17:
+        if len(message.content[7:]) < 3 or len(message.content[7:]) > 16:
             return await message.reply("O nome de invocador tem que ser maior que 3 e menor 16 digitos.")
 
         nickname = Khazix(message.content[7:])
